@@ -1,0 +1,49 @@
+{
+  "name": "@bitmacro/relay-connect",
+  "version": "0.1.0",
+  "description": "Nostr NIP-46 (Nostr Connect) and NIP-07 helpers for BitMacro Relay Manager and other clients",
+  "license": "MIT",
+  "author": "BitMacro <contact@bitmacro.io>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/bitmacro/relay-connect#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitmacro/relay-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitmacro/relay-connect/issues"
+  },
+  "keywords": [
+    "nostr",
+    "nip-46",
+    "nip-07",
+    "nostr-connect",
+    "relay-manager",
+    "bitmacro"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "node -e \"try{require('fs').rmSync('dist',{recursive:true})}catch(e){if(e.code!=='ENOENT')throw e}\"",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7"
+  }
+}
