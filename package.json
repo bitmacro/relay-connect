@@ -1,6 +1,6 @@
 {
   "name": "@bitmacro/relay-connect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Nostr NIP-46 (Nostr Connect) and NIP-07 helpers for BitMacro Relay Manager and other clients",
   "license": "MIT",
   "author": "BitMacro <contact@bitmacro.io>",

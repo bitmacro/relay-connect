@@ -1,6 +1,18 @@
 /**
- * @bitmacro/relay-connect — shared Nostr Connect (NIP-46) and browser signer (NIP-07) client logic.
+ * @bitmacro/relay-connect — **BitMacro Connect** — NIP-46 / NIP-07 client helpers.
  * Reference UI: https://github.com/bitmacro/relay-connect-web
  */
 
-export const RELAY_CONNECT_VERSION = "0.1.0";
+export {
+  RELAY_CONNECT_PACKAGE_NAME,
+  RELAY_CONNECT_PRODUCT_NAME,
+  RELAY_CONNECT_VERSION,
+} from "./meta.js";
+export {
+  getRelayConnectLogMinLevel,
+  relayConnectLog,
+  setRelayConnectLogSink,
+  type RelayConnectLogEntry,
+  type RelayConnectLogLevel,
+  type RelayConnectLogSink,
+} from "./logger.js";

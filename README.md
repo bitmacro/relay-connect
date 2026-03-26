@@ -9,7 +9,7 @@
 **[→ Connect UI: relay-connect-web](https://github.com/bitmacro/relay-connect-web)**  
 **[→ BitMacro: bitmacro.io](https://bitmacro.io)**
 
-TypeScript SDK for **NIP-46 (Nostr Connect)** and **NIP-07** flows used with [BitMacro Relay Manager](https://bitmacro.io): `relay-api` `/signer`, optional `relay-agent`, and browser extensions.
+**BitMacro Connect** is the product name; the npm package is **`@bitmacro/relay-connect`**. TypeScript SDK for **NIP-46 (Nostr Connect)** and **NIP-07** used with [BitMacro Relay Manager](https://bitmacro.io): `relay-api` `/signer`, optional `relay-agent`, and browser extensions.
 
 **Reference app (Next.js):** [relay-connect-web](https://github.com/bitmacro/relay-connect-web)
 
@@ -21,7 +21,7 @@ TypeScript SDK for **NIP-46 (Nostr Connect)** and **NIP-07** flows used with [Bi
 
 ## Status
 
-Initial scaffold (`0.1.0`): public API will grow as logic is extracted from `relay-connect-web` and consumers like `relay-panel`.
+Public API grows as logic is extracted from `relay-connect-web` and consumers like `relay-panel`.
 
 ## Install
 
@@ -32,8 +32,37 @@ npm install @bitmacro/relay-connect
 ## Usage
 
 ```ts
-import { RELAY_CONNECT_VERSION } from "@bitmacro/relay-connect";
+import {
+  RELAY_CONNECT_PRODUCT_NAME,
+  RELAY_CONNECT_VERSION,
+  relayConnectLog,
+  setRelayConnectLogSink,
+} from "@bitmacro/relay-connect";
+
+console.log(RELAY_CONNECT_PRODUCT_NAME, RELAY_CONNECT_VERSION); // BitMacro Connect — marketing name
 ```
+
+### Logs → host app (browser or Node)
+
+The SDK does not assume `console`. Register a **sink** once; your UI can append entries to state, forward to analytics, or print:
+
+```ts
+import {
+  relayConnectLog,
+  setRelayConnectLogSink,
+  type RelayConnectLogEntry,
+} from "@bitmacro/relay-connect";
+
+setRelayConnectLogSink((entry: RelayConnectLogEntry) => {
+  // entry.product === "BitMacro Connect"
+  // entry.package === "@bitmacro/relay-connect"
+  myPanel.push(entry);
+});
+
+relayConnectLog("info", "Custom flow step", { step: "pairing" });
+```
+
+Optional second argument: `setRelayConnectLogSink(sink, { minLevel: "warn" })`. Call `setRelayConnectLogSink(null)` to detach.
 
 ## Development
 
