@@ -1,5 +1,7 @@
 # @bitmacro/relay-connect
 
+![BitMacro relay-connect](https://raw.githubusercontent.com/bitmacro/relay-connect/main/.github/social-preview.png)
+
 [![CI](https://github.com/bitmacro/relay-connect/actions/workflows/ci.yml/badge.svg)](https://github.com/bitmacro/relay-connect/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/@bitmacro/relay-connect.svg)](https://www.npmjs.com/package/@bitmacro/relay-connect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
