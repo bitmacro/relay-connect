@@ -74,6 +74,21 @@ npm run typecheck
 npm run build
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and PR guidelines.  
+Issues and PRs are welcome — bug fixes, UI improvements, and new relay-connect integrations.
+
+This project is maintained by [BitMacro](https://bitmacro.io).
+
+## Contributors
+
+<a align="center" href="https://github.com/bitmacro/relay-connect/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=bitmacro/relay-connect" />
+</a>
+
+---
+
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+Business Source License 1.1 (BSL-1.1). See [LICENSE](LICENSE).
